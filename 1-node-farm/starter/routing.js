@@ -1,6 +1,7 @@
 const http=require('http');
 const url=require('url');
 const fs=require('fs');
+const slugify=require('slugify');
 const replaceTemplate=require('./modules/replaceTemplate');
 
 
@@ -10,6 +11,9 @@ const dataObj=JSON.parse(data);
 const tempOverview=fs.readFileSync('./templates/template-overview.html');
 const tempCard=fs.readFileSync('./templates/template-card.html');
 const tempProduct=fs.readFileSync('./templates/template-product.html');
+
+const slugs=dataObj.map(element=>slugify(element.productName,{lower:true}));
+console.log(slugs);
 
 const server=http.createServer((req,res)=>{
     // console.log(req.url);

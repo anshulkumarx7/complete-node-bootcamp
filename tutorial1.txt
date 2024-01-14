@@ -1,0 +1,26 @@
+We can start node by typing node in the terminal.
+To exit we can .exit command or ctrl+D.
+Type Tab button to show up all constructors in the node.
+We can perform all kind of operations just like add,subtract etc;
+To use the previous value use _+30 (use underscore).
+example:-
+> 3+4
+7
+> _+10
+17
+
+
+
+"slugify": "^1.6.6" in package.json
+the three numeric represents majar version minor version and then patch version.
+
+
+npm outdated is used the current version that we are using are outdated .It return the list
+packages that are outdated.
+
+To install any specify version write like this:
+npm install slugify@1.0.0
+
+slugify": "^1.6.6" in this ^ represent all minor and patch releases.
+slugify": "*1.6.6" in this ^ represent all releases.
+slugify": "~1.6.6" in this ~ represent patch releases.
