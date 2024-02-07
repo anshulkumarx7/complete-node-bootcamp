@@ -1,7 +1,7 @@
 const fs=require('fs');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-dotenv.config({ path: '../../config.env' });
+dotenv.config({ path: './config.env' });
 const Tour=require('../../models/tourModel');
 const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
 mongoose.connect(DB).then(con => {
@@ -10,14 +10,14 @@ mongoose.connect(DB).then(con => {
 })
 
 //Read json file
-const tours=JSON.parse(fs.readFileSync('../../dev-data/data/tour-simple.json','utf-8'));
+const tours=JSON.parse(fs.readFileSync(`./dev-data/data/tours-simple.json`,'utf-8'));
 
 //importing data
 
 const importData=async()=>{
     try{
         await Tour.create(tours);
-        console.log("Data deleted successfully");
+        console.log("Data created successfully");
     }catch(err){
         console.log(err)
     }
